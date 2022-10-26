@@ -3,6 +3,7 @@ const app = express()
 const port = process.env.PORT || 5000
 
 const allTopics = require('./data/all-topics.json')
+const topics = require('./data/topics.json')
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
