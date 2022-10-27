@@ -1,29 +1,34 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const port = process.env.PORT || 5000
 
-const allTopics = require('./data/all-topics.json')
+
+
+
+app.use(cors())
+const categories = require('./data/all-topics.json')
 const topics = require('./data/topics.json')
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
 
-  app.get('/all-topics', (req, res) => {
-    res.send(allTopics)
+  app.get('/categories', (req, res) => {
+    res.send(categories)
 });
 
-app.get('/all-topics/:id', (req, res) => {
+app.get('/category/:id', (req, res) => {
     const id = req.params.id;
-        const selectedAllTopics = topics.find( n => n.allTopics_id === id)
-        res.send(selectedAllTopics)
+        const selectedcategories = topics.find( n => n.allTopics_id === id)
+        res.send(selectedcategories)
     })
 
-app.get('/topics', (req, res) =>{
+app.get('/topic', (req, res) =>{
     res.send(topics);
 });
 
-app.get('/topics/:id', (req, res) => {
+app.get('/topic/:id', (req, res) => {
     const id = req.params.id;
         const selectedTopics = topics.find( n => n._id === id)
         res.send(selectedTopics)

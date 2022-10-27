@@ -1,8 +1,4 @@
 [
-    {
-      "id": "00",
-      "name": "All Topics"
-    },
       {
         "id": "01",
         "name": "HTML"
@@ -30,6 +26,10 @@
       {
         "id": "07",
         "name": "NODE.JS"
+      },
+      {
+        "id": "08",
+        "name": "Git & Github"
       }
      
     ]
